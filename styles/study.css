@@ -1,0 +1,52 @@
+#wrap {
+    width: 402px;
+    height: 874px;
+    background-color: rgb(180, 193, 232);
+    padding: 45px 15px;
+}
+/* --------------------------------------header 1행--------------------------------------------- */
+#wrap > header {
+    border-bottom: 1px solid #000;
+    margin-bottom: 20px;
+}
+#wrap > header > .top {}
+#wrap > header > .top > h1 {}
+#wrap > header > .top > h1 > a {
+    font-weight: 700;
+    font-size: 1.125;
+}
+#wrap > header > .top > .r_menu  {}
+#wrap > header > .top > .r_menu > .search_btn  {
+    margin-right: 8px;
+}
+#wrap > header > .top > .r_menu > .search_btn > img  {}
+#wrap > header > .top > .r_menu > .menu_btn  {}
+#wrap > header > .top > .r_menu > .menu_btn > img  {}
+/* --------------------------------------header 2행--------------------------------------------- */
+#wrap > header > .all_today {
+    padding-bottom: 10px;
+}
+#wrap > header > .all_today > .all {
+    font-size: 1.125;
+    color: #aaaaaa ;
+    margin-right: 15px;
+}
+#wrap > header > .all_today > .all > .a_number {
+    color: #aaaaaa ;
+}
+#wrap > header > .all_today > .today {
+    font-size: 1.125;
+    color: #aaaaaa ;
+}
+#wrap > header > .all_today > .today > .t_number {
+    color: #aaaaaa ;
+}
+#wrap > header > .all_today > .active {
+    font-weight: 700;
+    color: #000;
+}
+#wrap > header > .all_today > .active > .a_number {
+    font-weight: 700;
+    color: #000;
+}
+/* --------------------------------------main 1행--------------------------------------------- */
