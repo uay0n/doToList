@@ -8,7 +8,7 @@
 #wrap {
     width: 402px; /* css 숫자입력 시 단위작성하기 */
     height: 874px;
-    background-color: aqua;
+    background-color: rgb(203, 227, 252);
      /* 안쪽여백, 피그마 오토레이아웃 패딩과 동일 */
      /* 안쪽여백 패딩을 4방향 각각 넣는 법 */
     /* padding-left: 15px;
@@ -34,7 +34,11 @@
     border-bottom: 1px solid #000;
     margin-bottom: 20px;
 }
-#wrap > header > .top {}
+#wrap > header > .top {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+}
 #wrap > header > .top > h1 {}
 #wrap > header > .top > h1 > a { /* 글자꾸미기는 가장 글자에 가까운 선택자에 작성 */
     font-size: 1.125em;
@@ -75,4 +79,53 @@
     font-weight: 700;
     color: #000;
 }
+/* --------------------------main--------------------------------------------- */
+#wrap > main {}
 /* --------------------------main 1행--------------------------------------------- */
+#wrap > main > .day_todo_list {
+    background-color: rgb(174, 206, 252);
+    display: flex;
+    flex-flow: column-reverse nowrap;
+    /* 실제 웹&앱 서비스를 이용하는 사용자가 작성하는 내용은 항상 부모의 마지막 자식 위치로 삽입니다. 개발자가 '반전' 설정을 하지 않으면 무조건 아래로 쌓인다는 뜻. 내용이 많을수록 점점 보기 불편해지는 상황이 생기므로 축 반전을 통해 사용자가 작성한 마지막 글이 '첫 글'이 되도록 프로그래밍을 작성해야한다. */
+    /* gap:10px; */ /* 2개이상의 자식사이 바깥쪽여백(간격) 적용 (marjin과 효과동일) */
+    /* flex없이 gap 사용 금지 */
+}
+#wrap > main > .day_todo_list >li {
+    display: flex; /* 외에 나머지 속성은 순서 상관 없음. */
+    flex-flow: row nowrap; /* 메인축(수평) 줄바꿈(x) */
+    justify-content: flex-start;
+    align-items: flex-start;
+    gap: 16px;
+    padding: 12px 0 12px 0;
+    border-bottom: 1px solid rgba(0,0,0,0.5);
+    width: 372px; height: 40px;
+}
+#wrap > main > .day_todo_list >li > * {
+    font-size: 1em;
+    letter-spacing : -0.02em;
+}
+#wrap > main > .day_todo_list >li > .date {
+    font-weight: 600;
+}
+#wrap > main > .day_todo_list >li > .content {}
+/* --------------------------main 3행--------------------------------------------- */
+#wrap > main > .write_popup {
+    background-color: rgb(255, 246, 222);
+    height: 240px; width: 300px;
+    display: flex;
+    padding: 20px;
+    flex-flow: column nowrap;
+    justify-content: space-between;
+
+}
+#wrap > main > .write_popup > .info {
+    font-family: 'Noto Sans KR';
+    font-size: 0.875em;
+    font-weight: 400;
+    color: rgba(0,0,0,0.6);
+}
+#wrap > main > .write_popup > .write_btn {
+    width: 42px;
+    align-self : flex-end;/* 자식한테만 개별로 적용하고 싶은 경우 */
+}
+#wrap > main > .write_popup > .write_btn > img {width: 100%;}
