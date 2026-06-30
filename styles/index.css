@@ -5,10 +5,11 @@
 /* 부모선택자 > 자식선택자 {속성:값;} */
 /* 형제선택자 + 입정형제선택자 {속성:값;} */
 /* 형제선택자 ~ 뒤에모든형제들 {속성:값;} */
+body {background-color: #f5f5f5;}
 #wrap {
     width: 402px; /* css 숫자입력 시 단위작성하기 */
     height: 874px;
-    background-color: rgb(203, 227, 252);
+    background-color: rgb(255, 255, 255);
      /* 안쪽여백, 피그마 오토레이아웃 패딩과 동일 */
      /* 안쪽여백 패딩을 4방향 각각 넣는 법 */
     /* padding-left: 15px;
@@ -28,6 +29,7 @@
     /* 테두리 적용 문법 border:두께 모양 색상; */
     /* border:1px solid #000 */
     /* 테두리 종류 : solod, dashed, dotted, double */
+    position: relative;/* 기준 */
 }
 /* --------------------------header 1행--------------------------------------------- */
 #wrap > header {
@@ -80,10 +82,13 @@
     color: #000;
 }
 /* --------------------------main--------------------------------------------- */
-#wrap > main {}
+#wrap > main {
+    height: 90%;
+    overflow: hidden; /* 가로 사이즈가 여백이 있어 스크롤이 같이 만들어졌을 때 */
+    overflow-y: auto; /* 내용이 넘친 방향만 자동으로 스크롤을 만들고 나머지는 hidden처리 */
+}
 /* --------------------------main 1행--------------------------------------------- */
 #wrap > main > .day_todo_list {
-    background-color: rgb(174, 206, 252);
     display: flex;
     flex-flow: column-reverse nowrap;
     /* 실제 웹&앱 서비스를 이용하는 사용자가 작성하는 내용은 항상 부모의 마지막 자식 위치로 삽입니다. 개발자가 '반전' 설정을 하지 않으면 무조건 아래로 쌓인다는 뜻. 내용이 많을수록 점점 보기 불편해지는 상황이 생기므로 축 반전을 통해 사용자가 작성한 마지막 글이 '첫 글'이 되도록 프로그래밍을 작성해야한다. */
@@ -110,12 +115,14 @@
 #wrap > main > .day_todo_list >li > .content {}
 /* --------------------------main 3행--------------------------------------------- */
 #wrap > main > .write_popup {
-    background-color: rgb(255, 246, 222);
+    background-color: rgb(255, 255, 255);
     height: 240px; width: 300px;
     display: flex;
     padding: 20px;
     flex-flow: column nowrap;
     justify-content: space-between;
+    /* 팝업 띄우기 */
+    position: absolute; left: 50px; top: 300px;
 
 }
 #wrap > main > .write_popup > .info {
@@ -129,3 +136,11 @@
     align-self : flex-end;/* 자식한테만 개별로 적용하고 싶은 경우 */
 }
 #wrap > main > .write_popup > .write_btn > img {width: 100%;}
+/* ----------------------------------------------글쓰기버튼----------------------------------------- */
+#wrap > main > .write_popup_btn {
+    width: 42px; height: 42px;
+    display: block;
+    /* position: fixed; right: 15px; bottom: 45px; */
+    position: absolute; right: 30px; bottom: 60px;
+}
+#wrap > main > .write_popup_btn > img {width: 100%;}
